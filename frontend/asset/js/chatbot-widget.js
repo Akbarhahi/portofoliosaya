@@ -21,7 +21,7 @@ function chatbotWidgetInit() {
     chatbotInput.value = '';
     addMessage('...', 'bot');
     try {
-      const res = await fetch('https://prevalently-trappiest-milagros.ngrok-free.dev', {
+      const res = await fetch('https://prevalently-trappiest-milagros.ngrok-free.dev/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userMsg })
