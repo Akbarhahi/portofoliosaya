@@ -3,6 +3,7 @@ joblib
 numpy
 Sastrawi
 flask
+gunicorn
 flask-cors
 sentence-transformers
 torch
