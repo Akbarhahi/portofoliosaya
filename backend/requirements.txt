@@ -1,0 +1,11 @@
+scikit-learn
+joblib
+numpy
+Sastrawi
+flask
+flask-cors
+sentence-transformers
+torch
+Sastrawi
+wikipedia-api
+flair
