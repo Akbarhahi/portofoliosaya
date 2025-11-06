@@ -1,12 +1,21 @@
 <!-- Chatbot Widget HTML -->
-<div id="chatbot-widget" style="position:fixed;bottom:30px;right:30px;z-index:9999;">
-  <div id="chatbot-box" style="width:320px;background:#222;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.2);overflow:hidden;display:flex;flex-direction:column;">
-    <div style="background:#a883ff;color:#fff;padding:12px 20px;font-weight:600;">Chatbot</div>
-    <div id="chatbot-messages" style="flex:1;min-height:180px;max-height:300px;overflow-y:auto;padding:16px 12px 8px 12px;font-size:15px;"></div>
+<div id="chatbot-widget" style="position:fixed;bottom:-100%;transform:translateX(-50%);left:50%;z-index:9999;transition: all 300ms ease-in;    width: 600px;
+ 
+">
+  <div id="chatbot-box"
+    style="width:100%;background:#222;;box-shadow:0 4px 24px rgba(0,0,0,0.2);overflow:hidden;display:flex;flex-direction:column;">
+    <div style="background:#a883ff;color:#fff;padding:12px 20px;font-weight:600;   border-top-left-radius: 10px;
+    border-top-right-radius: 10px;">
+      Chatbot AI
+    </div>
+    <div id="chatbot-messages"
+      style="flex:1;min-height:180px;max-height:300px;overflow-y:auto;padding:16px 12px 8px 12px;font-size:15px;background:#222;">
+    </div>
     <form id="chatbot-form" style="display:flex;border-top:1px solid #333;">
-      <input id="chatbot-input" type="text" placeholder="Tulis pesan..." autocomplete="off" style="flex:1;padding:10px 12px;border:none;background:#292942;color:#fff;outline:none;" />
-      <button type="submit" style="background:#a883ff;color:#fff;border:none;padding:0 18px;font-weight:600;cursor:pointer;">Kirim</button>
+      <input id="chatbot-input" type="text" placeholder="Tulis pesan..." autocomplete="off"
+        style="flex:1;padding:10px 12px;border:none;background:#292942;color:#fff;outline:none;" />
+      <button type="submit"
+        style="background:#a883ff;color:#fff;border:none;padding:0 18px;font-weight:600;cursor:pointer;">Kirim</button>
     </form>
   </div>
 </div>
-

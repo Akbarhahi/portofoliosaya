@@ -1,9 +1,124 @@
+.first-hero {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 30vh;
+  height: 100vh;
+}
+
+.left-text {
+  margin-left: 5vw;
+}
+
+.right-text {
+  margin-left: auto;
+  margin-right: 5vw;
+  margin-top: 21vh;
+}
+
+.proyek {
+  height: 100vh;
+}
+
+.second-hero {
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  margin-left: 5vw;
+  padding: 30px;
+}
+
+.second-hero-title {
+  padding-top: 15vh;
+}
+
+/* Spasi vertikal antar mmk01, mmk02, mmk03 */
+.mmksnd {
+  display: block;
+  margin-bottom: 18px;
+}
+
+/* ===== Nav-text Custom ===== */
+.nav-text {
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+}
+/* ===== Footer Modern ===== */
+.site-footer {
+  background: rgba(34, 32, 32, 0.3);
+  color: var(--muted);
+  padding: 40px 0;
+  margin-top: 50px;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  padding: 0 60px;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-copyright {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.footer-copyright p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.footer-social {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.footer-social a {
+  color: var(--text);
+  font-size: 1.4em;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.footer-social a:hover {
+  background-color: var(--accent);
+  color: var(--bg-gradient);
+  transform: translateY(-3px) scale(1.1);
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    text-align: left;
+  }
+  .footer-copyright {
+    width: auto;
+    margin-bottom: 0;
+  }
+  .footer-social {
+    width: auto;
+    justify-content: flex-end;
+  }
+}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-  --primary: #121212;
-  --accent: #a883ff;
-  --bg-gradient: linear-gradient(135deg, #1c1c2d, #2e1f46);
+  --primary: #f7eded;
+  --accent: #d7caf5;
+  --bg-gradient: #1E1E2A;
   --text: #f5f5f5;
   --muted: #b0a8c3;
 }
@@ -32,9 +147,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   z-index: 10;
+  padding-top: 10vh;
+}
+
+.nav-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 .navbar .logo {
@@ -57,13 +179,55 @@ body {
 }
 
 /* ===== Hero Section ===== */
+
 .hero {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 20px;
+  justify-content: flex-start;
+  text-align: left;
+  padding-left: 40px;
+  padding-right: 20px;
+  position: relative;
+}
+/* Hero left image */
+.hero-img {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 40px;
+}
+.hero-img img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+/* Hero background image */
+.hero-bg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 600px;
+  height: 400px;
+  z-index: 1;
+  overflow: hidden;
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(0,0,0,0.02);
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
 }
 
 .hero-content {
@@ -90,7 +254,7 @@ body {
 .btn {
   padding: 12px 30px;
   background: var(--accent);
-  color: #fff;
+  color: #897979;
   text-decoration: none;
   font-weight: 600;
   border-radius: 30px;
@@ -142,6 +306,12 @@ body {
   background: rgba(255, 255, 255, 0.1);
 }
 
+.third-hero-text{
+  text-align: center;
+}
+
+
+
 .btn-secondary {
   display: inline-block;
   margin-top: 15px;
@@ -152,15 +322,6 @@ body {
 
 .btn-secondary:hover {
   text-decoration: underline;
-}
-
-/* ===== Footer ===== */
-footer {
-  text-align: center;
-  padding: 30px 10px;
-  color: var(--muted);
-  background: rgba(0, 0, 0, 0.3);
-  font-size: 0.9rem;
 }
 
 /* ===== Fade Animations ===== */
@@ -203,3 +364,8 @@ footer {
     width: 100%;
   }
 }
+.iconchatbot {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+  }
