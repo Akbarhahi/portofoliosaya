@@ -1,0 +1,255 @@
+/* =====================================================
+   GLOBAL STYLE — FLUID RESPONSIVE
+===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: url("BG.png");
+  background-size: cover;
+  background-attachment: fixed; /* efek parallax */
+  background-position: center;
+
+  /* FONT GLOBAL RESPONSIVE (HP → PC) */
+  font-size: clamp(0.85rem, 2.2vw, 1rem);
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+
+  padding: clamp(8px, 4vw, 20px) clamp(12px, 6vw, 60px);
+  display: flex;
+  justify-content: right;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.nav-text {
+  display: flex;
+  gap: clamp(10px, 5vw, 40px);
+  flex-wrap: wrap;
+}
+
+.nav-text a {
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  text-decoration: none;
+  color: #f5f5f5;
+  transition: 0.3s;
+}
+
+.nav-text a:hover,
+.nav-text a.active {
+  color: #d7caf5;
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+.first-hero {
+  margin-top: 20vh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: clamp(20px, 8vw, 80px);
+  flex-wrap: wrap;
+
+  padding: 0 clamp(15px, 8vw, 80px);
+}
+
+.first-hero h1 {
+  font-size: clamp(1.8rem, 7vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.first-hero p {
+  max-width: 480px;
+  font-size: clamp(0.9rem, 3vw, 1rem);
+}
+
+.right-text h3 {
+  font-size: clamp(1rem, 3.5vw, 1.4rem);
+  color: #d7caf5;
+}
+
+/* =====================================================
+   SECOND HERO — PROJECTS
+===================================================== */
+.second-hero {
+  text-align: center;
+  padding: clamp(40px, 10vw, 100px) clamp(12px, 6vw, 60px);
+}
+
+.second-hero-title h1 {
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  color: #d7caf5;
+}
+
+.second-hero-title p {
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  color: #c9c2dd;
+}
+
+/* PROJECT CARDS */
+/* ====== WRAPPER GRID ====== */
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  max-width: 700px;
+  margin: 0 auto;
+  justify-items: center;
+
+}
+/* ====== CARD ====== */
+.project-card {
+  width: 220px;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+/* ====== ICON ====== */
+.project-card img {
+  width: 130px;
+  margin-bottom: 10px;
+}
+
+/* ====== TEXT ====== */
+.project-card h3 {
+  margin: 5px 0 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.project-card p {
+  margin: 3px 0 15px;
+  font-size: 13px;
+  color: #555;
+}
+
+/* ====== BUTTON ====== */
+.btn-secondary {
+  display: inline-block;
+  background: #d0e4ff;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #2b5ca8;
+  text-decoration: none;
+  width: 100%;
+}
+
+.btn-secondary:hover {
+  background: #bcd3ff;
+}
+/* =====================================================
+   SHOWCASE SECTION
+===================================================== */
+.third-hero-text {
+  width: 100%;
+  height: 400vw;            /* dari 60vw → 80vw agar lebih panjang */
+  max-height: 500px;       /* tinggi maksimum juga ditambah */
+  background-image: url("Showcase\ Bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 20px;
+}
+
+
+.third-hero-text h1 {
+  margin-top: -450px;
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  color: #d7caf5;
+}
+
+.third-hero-text p {
+  font-size: clamp(0.85rem, 3vw, 1rem);
+  color: #c9c2dd;
+}
+
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+.section {
+  background: linear-gradient(to bottom, #F5F7FA 50%, #F1EDFF 80%);
+  padding: clamp(50px, 12vw, 100px) clamp(15px, 8vw, 60px);
+  text-align: center;
+} 
+
+.section h2 {
+  font-size: clamp(1.6rem, 5vw, 2.3rem);
+  color: #d7caf5;
+}
+
+
+  .iconchatbot {
+    width: 32px;
+    height: 32px;
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.site-footer {
+  background: rgba(244, 243, 243, 0.988);
+  padding: 30px 0;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: clamp(12px, 3vw, 20px);
+  margin-top: 10px;
+}
+
+.footer-social a {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+/* =====================================================
+   MEDIA QUERY KHUSUS LAYAR KECIL (≤ 320px)
+===================================================== */
+@media (max-width: 320px) {
+  .first-hero {
+    margin-top: 16vh;
+  }
+
+  .project-card {
+    width: 95vw;
+  }
+
+  .navbar {
+    padding-top: 5vh;
+  }
+
+}
