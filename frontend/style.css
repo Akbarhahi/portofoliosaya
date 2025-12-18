@@ -1,128 +1,6 @@
-.first-hero {
-  display: flex;
-  justify-content: flex-start;
-  padding-top: 30vh;
-  height: 100vh;
-}
-
-.left-text {
-  margin-left: 5vw;
-}
-
-.right-text {
-  margin-left: auto;
-  margin-right: 5vw;
-  margin-top: 21vh;
-}
-
-.proyek {
-  height: 100vh;
-}
-
-.second-hero {
-  display: flex;
-  align-items: left;
-  flex-direction: column;
-  margin-left: 5vw;
-  padding: 30px;
-}
-
-.second-hero-title {
-  padding-top: 15vh;
-}
-
-/* Spasi vertikal antar mmk01, mmk02, mmk03 */
-.mmksnd {
-  display: block;
-  margin-bottom: 18px;
-}
-
-/* ===== Nav-text Custom ===== */
-.nav-text {
-  margin-left: auto;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 18px;
-}
-/* ===== Footer Modern ===== */
-.site-footer {
-  background: rgba(34, 32, 32, 0.3);
-  color: var(--muted);
-  padding: 40px 0;
-  margin-top: 50px;
-  font-size: 0.9rem;
-}
-
-.footer-container {
-  padding: 0 60px;
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-}
-
-.footer-copyright {
-  width: 100%;
-  margin-bottom: 20px;
-}
-.footer-copyright p {
-  margin: 0;
-  font-size: 0.9em;
-}
-
-.footer-social {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-.footer-social a {
-  color: var(--text);
-  font-size: 1.4em;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-.footer-social a:hover {
-  background-color: var(--accent);
-  color: var(--bg-gradient);
-  transform: translateY(-3px) scale(1.1);
-}
-
-@media (min-width: 768px) {
-  .footer-container {
-    text-align: left;
-  }
-  .footer-copyright {
-    width: auto;
-    margin-bottom: 0;
-  }
-  .footer-social {
-    width: auto;
-    justify-content: flex-end;
-  }
-}
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-:root {
-  --primary: #f7eded;
-  --accent: #d7caf5;
-  --bg-gradient: #1E1E2A;
-  --text: #f5f5f5;
-  --muted: #b0a8c3;
-}
-
+/* =====================================================
+   GLOBAL STYLE — FLUID RESPONSIVE
+===================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -132,240 +10,422 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: var(--bg-gradient);
-  color: var(--text);
-  overflow-x: hidden;
+  background-image: url("BG.png");
+  background-size: cover;
+  background-attachment: fixed; /* efek parallax */
+  background-position: center;
+
+  /* FONT GLOBAL RESPONSIVE (HP → PC) */
+  font-size: clamp(0.85rem, 2.2vw, 1rem);
 }
 
-/* ===== Navbar ===== */
+/* =====================================================
+   NAVBAR
+===================================================== */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  padding: 20px 60px;
+  top: 0;
+
+  padding: clamp(8px, 4vw, 20px) clamp(12px, 6vw, 60px);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: right;
   backdrop-filter: blur(10px);
-  z-index: 10;
-  padding-top: 10vh;
+  z-index: 1000;
 }
 
 .nav-text {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
+  gap: clamp(10px, 5vw, 40px);
+  flex-wrap: wrap;
 }
 
-.navbar .logo {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.navbar nav a {
-  color: var(--text);
-  margin: 0 15px;
+.nav-text a {
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.navbar nav a:hover,
-.navbar nav a.active {
-  color: var(--accent);
-}
-
-/* ===== Hero Section ===== */
-
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: left;
-  padding-left: 40px;
-  padding-right: 20px;
-  position: relative;
-}
-/* Hero left image */
-.hero-img {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-right: 40px;
-}
-.hero-img img {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-}
-/* Hero background image */
-.hero-bg {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 600px;
-  height: 400px;
-  z-index: 1;
-  overflow: hidden;
-}
-.hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.35;
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-  background: rgba(0,0,0,0.02);
-  border-radius: 16px;
-  padding: 32px 24px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-}
-
-.hero-content {
-  max-width: 700px;
-  animation: fadeUp 1.2s ease-in-out;
-}
-
-.hero-content h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.hero-content h1 span {
-  color: var(--accent);
-}
-
-.hero-content p {
-  color: var(--muted);
-  margin-bottom: 30px;
-  line-height: 1.7;
-}
-
-.btn {
-  padding: 12px 30px;
-  background: var(--accent);
-  color: #897979;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 30px;
+  color: #f5f5f5;
   transition: 0.3s;
 }
 
-.btn:hover {
-  background: #8c6aff;
+.nav-text a:hover,
+.nav-text a.active {
+  color: #d7caf5;
 }
 
-/* ===== Section Style ===== */
-.section {
-  padding: 100px 60px;
-  text-align: center;
-}
-
-.section h2 {
-  font-size: 2rem;
-  color: var(--accent);
-  margin-bottom: 15px;
-}
-
-.section p {
-  max-width: 700px;
-  margin: 0 auto 40px;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-/* ===== Projects ===== */
-.project-container {
+/* =====================================================
+   HERO SECTION
+===================================================== */
+/* === HERO WRAPPER === */
+#home {
+  width: 100%;
+  min-height: 100vh; /* Full layar pengguna */
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
+  align-items: center;
 }
 
+/* === BACKGROUND IMAGE === */
+.first-hero {
+  width: 100%;
+  min-height: 100vh;
+
+  background-image: url("HOMEPAGE ornamen.png"); /* ganti dengan gambar kamu */
+  background-size: cover;      /* full screen & responsif */
+  background-position: center; /* fokus */
+  background-repeat: no-repeat;
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: clamp(20px, 8vw, 80px);
+  position: relative;
+}
+
+/* === OVERLAY AGAR TEKS JELAS === */
+.first-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 230, 240, 0.18);
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+
+
+/* === TEXT DI DEPAN GAMBAR === */
+.left-text,
+.right-text {
+  position: relative;
+  z-index: 2; /* memastikan teks berada di atas gambar */
+}
+
+.first-hero h1 {
+  font-size: clamp(2rem, 7vw, 4rem);
+  color: white;
+}
+
+.first-hero p,
+.right-text h3 {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* =====================================================
+   SECOND HERO — PROJECTS
+===================================================== */
+.second-hero {
+  text-align: center;
+  padding: clamp(40px, 10vw, 100px) clamp(12px, 6vw, 60px);
+}
+
+.second-hero-title h1 {
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  color: #d7caf5;
+}
+
+.second-hero-title p {
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  color: #c9c2dd;
+}
+
+/* PROJECT CARDS */
+/* ====== WRAPPER GRID ====== */
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  max-width: 700px;
+  margin: 0 auto;
+  justify-items: center;
+
+}
+/* ====== CARD ====== */
 .project-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 220px;
+  background: white;
+  padding: 20px;
   border-radius: 20px;
-  padding: 30px;
-  width: 280px;
-  transition: 0.3s ease;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
 }
 
-.third-hero-text{
-  text-align: center;
+/* ====== ICON ====== */
+.project-card img {
+  width: 130px;
+  margin-bottom: 10px;
 }
 
+/* ====== TEXT ====== */
+.project-card h3 {
+  margin: 5px 0 0;
+  font-size: 17px;
+  font-weight: 700;
+}
 
+.project-card p {
+  margin: 3px 0 15px;
+  font-size: 13px;
+  color: #555;
+}
 
+/* ====== BUTTON ====== */
 .btn-secondary {
   display: inline-block;
-  margin-top: 15px;
-  color: var(--accent);
-  font-weight: 600;
+  background: #d0e4ff;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #2b5ca8;
   text-decoration: none;
+  width: 100%;
 }
 
 .btn-secondary:hover {
-  text-decoration: underline;
+  background: #bcd3ff;
+}
+/* =====================================================
+   SHOWCASE SECTION
+===================================================== */
+.third-hero-text {
+  width: 100%;
+  height: 400vw;            /* dari 60vw → 80vw agar lebih panjang */
+  max-height: 500px; 
+  text-align: center;
+ margin-top: 200px;
+        /* tinggi maksimum juga ditambah */
+}
+.third-hero-text img {
+  width: 100%;               /* perbesar gambar (atur 80% → 90% → 100% sesuai kebutuhan) */
+  max-width: 900px;         /* batas maksimum agar tidak terlalu besar */
+  margin-bottom: 30px;      /* jarak gambar ke teks */
 }
 
-/* ===== Fade Animations ===== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+.third-hero-text h1 {
+  margin-top: -600px;
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  color: #d7caf5;
 }
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+.third-hero-text p {
+  font-size: clamp(0.85rem, 3vw, 1rem);
+  color: #c9c2dd;
+}
+/* =====================================================
+   ABOUT us SECTION
+===================================================== */
+#about {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -60px;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+.about-container {
+  max-width: 800px;
+  text-align: center;
+  padding: 20px;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .navbar {
+.about-container h1 {
+  font-size: 3rem;
+  margin-bottom: 60px;   /* spasi lebih besar ke bawah */
+  color: #fff;
+}
+.about-container h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: -54px; /* jarak antara ABOUT dan TAKS BREDER */
+  margin-bottom: 20px;
+  color: #fff;
+}
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #696363;
+}
+
+
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+/* === SECTION UTAMA (punyamu) === */
+.section {
+  background: linear-gradient(to bottom, #F5F7FA 50%, #F1EDFF 80%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(50px, 12vw, 100px) clamp(15px, 8vw, 60px);
+  text-align: center;
+  margin-top: -40px;
+}
+
+.section h2 {
+  font-size: clamp(1.6rem, 5vw, 2.3rem);
+  color: #070707;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+/* === ABOUT DESKRIPSI === */
+.about-desc {
+  max-width: 750px;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  line-height: 1.7;
+  color: #333;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+/* ICON DI ATAS TEKS */
+.icon {
+  width: 90px;             /* ukuran asli tetap */
+  margin-bottom: 25px;     /* tidak berubah */
+  transform: scale(5.8);   /* perbesar icon */
+  transform-origin: center;
+}
+
+/* === ANGOTA TEAM TITLE === */
+.member-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #d1237c;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+/* === CONTAINER ANGGOTA === */
+.member-container {
+  display: flex;
+  justify-content: center;
+  gap: clamp(20px, 5vw, 60px);
+  flex-wrap: wrap;
+}
+
+/* === CARD ANGGOTA === */
+.member-card {
+  text-align: center;
+}
+
+/* FOTO ANGGOTA */
+.member-photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #fff;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+
+/* NAMA ANGGOTA */
+.member-name {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+
+.iconchatbot {
+  width: 32px;
+  height: 32px;
+  min-width: 24px;
+  min-height: 24px;
+  display: block;
+  margin: 0 auto;                      /* pastikan ikon juga center */
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.tb-footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffffff;
+  color: #555;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.footer-logo img {
+  width: 120px;   /* sesuaikan ukuran logo */
+  margin-bottom: 5px;
+}
+
+.footer-logo h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.footer-menu li a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  transition: 0.3s ease;
+}
+
+.footer-menu li a:hover {
+  opacity: 0.6;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 600px) {
+  .footer-menu {
     flex-direction: column;
-    text-align: center;
+    gap: 15px;
   }
+}
 
-  .navbar nav {
-    margin-top: 10px;
-  }
 
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .section {
-    padding: 80px 30px;
+/* =====================================================
+   MEDIA QUERY KHUSUS LAYAR KECIL (≤ 320px)
+===================================================== */
+@media (max-width: 320px) {
+  .first-hero {
+    margin-top: 16vh;
   }
 
   .project-card {
-    width: 100%;
+    width: 95vw;
   }
+
+  .navbar {
+    padding-top: 5vh;
+  }
+
 }
-.iconchatbot {
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-  }

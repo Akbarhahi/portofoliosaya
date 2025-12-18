@@ -1,80 +1,6 @@
-.site-footer {
-  background: rgba(34, 32, 32, 0.3);
-  color: var(--muted);
-  padding: 40px 0;
-  margin-top: 50px;
-  font-size: 0.9rem;
-}
-
-.footer-container {
-  padding: 0 60px;
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-}
-
-.footer-copyright {
-  width: 100%;
-  margin-bottom: 20px;
-}
-.footer-copyright p {
-  margin: 0;
-  font-size: 0.9em;
-}
-
-.footer-social {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-.footer-social a {
-  color: var(--text);
-  font-size: 1.4em;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-.footer-social a:hover {
-  background-color: var(--accent);
-  color: var(--bg-gradient);
-  transform: translateY(-3px) scale(1.1);
-}
-
-@media (min-width: 768px) {
-  .footer-container {
-    text-align: left;
-  }
-  .footer-copyright {
-    width: auto;
-    margin-bottom: 0;
-  }
-  .footer-social {
-    width: auto;
-    justify-content: flex-end;
-  }
-}
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-:root {
-  --primary: #f7eded;
-  --accent: #d7caf5;
-  --bg-gradient: #1E1E2A;
-  --text: #f5f5f5;
-  --muted: #b0a8c3;
-}
-
+/* =====================================================
+   GLOBAL STYLE — FLUID RESPONSIVE
+===================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -84,113 +10,246 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: var(--bg-gradient);
-  color: var(--text);
-  overflow-x: hidden;
+  background-image: url("BG.png");
+  background-size: cover;
+  background-attachment: fixed; /* efek parallax */
+  background-position: center;
+
+  /* FONT GLOBAL RESPONSIVE (HP → PC) */
+  font-size: clamp(0.85rem, 2.2vw, 1rem);
 }
 
-/* ===== Navbar ===== */
+/* =====================================================
+   NAVBAR
+===================================================== */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  padding: 20px 60px;
+  top: 0;
+
+  padding: clamp(8px, 4vw, 20px) clamp(12px, 6vw, 60px);
+  display: flex;
+  justify-content: right;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.nav-text {
+  display: flex;
+  gap: clamp(10px, 5vw, 40px);
+  flex-wrap: wrap;
+}
+
+.nav-text a {
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  text-decoration: none;
+  color: #f5f5f5;
+  transition: 0.3s;
+}
+
+.nav-text a:hover,
+.nav-text a.active {
+  color: #d7caf5;
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+.first-hero {
+  margin-top: 20vh;
+
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  z-index: 10;
+  align-items: flex-start;
+  gap: clamp(20px, 8vw, 80px);
+  flex-wrap: wrap;
+
+  padding: 0 clamp(15px, 8vw, 80px);
 }
 
-.navbar .logo {
-  font-size: 1.6rem;
+.first-hero h1 {
+  font-size: clamp(1.8rem, 7vw, 3rem);
   font-weight: 700;
-  color: var(--accent);
+  line-height: 1.1;
 }
 
-.navbar nav a {
-  color: var(--text);
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
+.first-hero p {
+  max-width: 480px;
+  font-size: clamp(0.9rem, 3vw, 1rem);
 }
 
-.navbar nav a:hover,
-.navbar nav a.active {
-  color: var(--accent);
+.right-text h3 {
+  font-size: clamp(1rem, 3.5vw, 1.4rem);
+  color: #d7caf5;
 }
 
-/* ===== Hero Section ===== */
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: left;
-  padding-left: 40px;
-  padding-right: 20px;
-  position: relative;
-}
-/* Hero left image */
-.hero-img {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-right: 40px;
-}
-.hero-img img {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-}
-/* Hero background image */
-.hero-bg {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 600px;
-  height: 400px;
-  z-index: 1;
-  overflow: hidden;
-}
-.hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.35;
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-  background: rgba(0,0,0,0.02);
-  border-radius: 16px;
-  padding: 32px 24px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+/* =====================================================
+   SECOND HERO — PROJECTS
+===================================================== */
+.second-hero {
+  text-align: center;
+  padding: clamp(40px, 10vw, 100px) clamp(12px, 6vw, 60px);
 }
 
-.hero-content {
+.second-hero-title h1 {
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  color: #d7caf5;
+}
+
+.second-hero-title p {
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  color: #c9c2dd;
+}
+
+/* PROJECT CARDS */
+/* ====== WRAPPER GRID ====== */
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
   max-width: 700px;
-  animation: fadeUp 1.2s ease-in-out;
+  margin: 0 auto;
+  justify-items: center;
+
+}
+/* ====== CARD ====== */
+.project-card {
+  width: 220px;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
 }
 
-.hero-content h1 {
-  font-size: 2.8rem;
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+/* ====== ICON ====== */
+.project-card img {
+  width: 130px;
+  margin-bottom: 10px;
+}
+
+/* ====== TEXT ====== */
+.project-card h3 {
+  margin: 5px 0 0;
+  font-size: 17px;
   font-weight: 700;
-  margin-bottom: 15px;
 }
 
-.hero-content h1 span {
-  color: var(--accent);
+.project-card p {
+  margin: 3px 0 15px;
+  font-size: 13px;
+  color: #555;
 }
 
-.hero-content p {
-  color: var(--muted);
-  margin-bottom: 30px;
-  line-height: 1.7;
+/* ====== BUTTON ====== */
+.btn-secondary {
+  display: inline-block;
+  background: #d0e4ff;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #2b5ca8;
+  text-decoration: none;
+  width: 100%;
+}
+
+.btn-secondary:hover {
+  background: #bcd3ff;
+}
+/* =====================================================
+   SHOWCASE SECTION
+===================================================== */
+.third-hero-text {
+  width: 100%;
+  height: 400vw;            /* dari 60vw → 80vw agar lebih panjang */
+  max-height: 500px;       /* tinggi maksimum juga ditambah */
+  background-image: url("Showcase\ Bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 20px;
+}
+
+
+.third-hero-text h1 {
+  margin-top: -450px;
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  color: #d7caf5;
+}
+
+.third-hero-text p {
+  font-size: clamp(0.85rem, 3vw, 1rem);
+  color: #c9c2dd;
+}
+
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+.section {
+  background: linear-gradient(to bottom, #F5F7FA 50%, #F1EDFF 80%);
+  padding: clamp(50px, 12vw, 100px) clamp(15px, 8vw, 60px);
+  text-align: center;
+} 
+
+.section h2 {
+  font-size: clamp(1.6rem, 5vw, 2.3rem);
+  color: #d7caf5;
+}
+
+
+  .iconchatbot {
+    width: 32px;
+    height: 32px;
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.site-footer {
+  background: rgba(244, 243, 243, 0.988);
+  padding: 30px 0;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: clamp(12px, 3vw, 20px);
+  margin-top: 10px;
+}
+
+.footer-social a {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+/* =====================================================
+   MEDIA QUERY KHUSUS LAYAR KECIL (≤ 320px)
+===================================================== */
+@media (max-width: 320px) {
+  .first-hero {
+    margin-top: 16vh;
+  }
+
+  .project-card {
+    width: 95vw;
+  }
+
+  .navbar {
+    padding-top: 5vh;
+  }
+
 }

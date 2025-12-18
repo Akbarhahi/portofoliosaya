@@ -34,4 +34,20 @@ function chatbotWidgetInit() {
       addMessage('Gagal terhubung ke server chatbot.', 'bot');
     }
   };
+  // Inject media query for 320px screens
+  const style = document.createElement('style');
+  style.textContent = `
+    @media (max-width: 320px) {
+      .chatbot-widget {
+        width: 98vw !important;
+        font-size: 0.9em !important;
+        padding: 6px !important;
+      }
+      #chatbot-messages > div span {
+        max-width: 95vw !important;
+        font-size: 0.95em !important;
+      }
+    }
+  `;
+  document.head.appendChild(style);
 }
